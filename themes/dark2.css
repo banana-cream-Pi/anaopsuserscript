@@ -77,7 +77,7 @@ textarea, input,
     color: black !important;
 }
 input, .cmty-post-textarea{
-    color: white !important;
+    color: black !important;
 }
 .cmty-post-username:not(.cmty-forum-mod):not(.cmty-forum-admin) > a{
     color: white !important;
