@@ -1,12 +1,18 @@
 /*Styles most things that just need this*/
+#small-footer-wrapper{
+  color:orange 
+  background-color: orange
+}
 .cmty-topic-cell,
 #header,
+.login-dropdown-content,
 #community-all > * > *,
 .cmty-topic-watchers,
 .cmty-tag-filter > *,
-.cmty-category-itembox-wrapper
-.aops-scroll-outer,
+.cmty-category-itembox-wrapper,
+.cmty-search-window,
 .cmty-post-wrapper,
+.cmty-topic-source-display,
 textarea, input,
 .cmty-items-input-box,
 .cmty-post-preview,
@@ -21,7 +27,8 @@ textarea, input,
 .cmty-posting-submenu,
 .aops-modal-body,
 .cmty-subfeed > .cmty-topics-list > * > .aops-scroll-inner,
-#page-wrapper{
+#page-wrapper,
+html{
   background-color: black !important;
   border-color: darkgray !important;
   color: white;
@@ -29,6 +36,7 @@ textarea, input,
 
 #top-bar,
 .aops-panel,
+.news-space,
 .cmty-friend-box,
 .image-content > *,
 .cmty-search-form > *,
@@ -37,21 +45,30 @@ textarea, input,
 .ebk-index-item-main,
 .grid .main-option,
 .aops-panel .box,
-.cmty-post-html > pre,
+#quote-panel,
+.cmty-post-target-note,
 .cmty-post-poll > .cmty-poll-display,
 .cmty-category-cell,
+.cmty-editable-active-row,
 .form,
+select,
+select *,
 .aops-modal-frame,
+#flyout,
+.cmty-subfeed,
+.cmty-search-results .cmty-category-cell-heading,
 .cmty-search-page .cmty-category-cell-heading{
   background-color: #222 !important; /*Was using 333 but 222 makes some colored text in some places MUCH easier to read.*/
   border-color: darkgray !important;
   color: white;
 }
+
 /*Latex and asy*/
 .latex, .latexcenter, .asy-image{
     background-color: transparent !important;
-    filter: invert(1) !important;
+    filter: invert(1) hue-rotate(180deg) !important;
 }
+
 /*Some other stuff*/
 .copy{
     color: white;
@@ -66,25 +83,31 @@ textarea, input,
 .site.selected{
     color: white !important;
 }
-#breadcrumbs-wrapper{
-    background-color: #004d53 !important;
+#breadcrumbs .title, #breadcrumbs-wrapper {
+    background-color: rgb(0, 79, 86);
 }
 .aops-scroll-fade-bottom, .aops-scroll-fade-top{
-    background: black !important;
+    filter: invert(1) !important;
 }
 .menu-cart-items{
     background-color: white !important;
     color: black !important;
 }
 input, .cmty-post-textarea{
-    color: black !important;
-}
-.cmty-post-username:not(.cmty-forum-mod):not(.cmty-forum-admin) > a{
     color: white !important;
 }
-.cmty-phone-poster:not(.cmty-forum-mod):not(.cmty-forum-admin) > *{ /*A stupid hack necessary because there is something that I can't override*/
+
+/*Usernames*/
+.cmty-post-username:not([class*="cmty-forum"]):not(.cmty-user-admin) > a{
+    color: white !important;
+}
+.cmty-phone-poster:not([class*="cmty-forum"]):not(.cmty-user-admin) > *{ /*A stupid hack necessary because there is something that I can't override*/
     filter: invert(1) !important;
 }
+.cmty-user-admin a, .cmty-post .cmty-user-admin::before {
+    color: #009fad !important;
+}
+/*Feed recolors*/
 .feed-tab{
     color: gray !important;
 }
@@ -95,21 +118,65 @@ input, .cmty-post-textarea{
   background: gray !important;
   color: white !important;
 }
+
+/*Topic colors*/
 .topic-unread{
-    background: #444 !important;
+    background: #333 !important;
 }
 .topic-unread .cmty-topic-watchers{
-    background-color: #444 !important;
+    background-color: #333 !important;
 }
 .cmty-topic-cell-post{
     color: #ddd !important;
 }
+
+/*Menubars (ONLINE SCHOOL, BOOKSTORE, COMMUNITY, RESOURCES)*/
 .triangle{
     display: none !important;
 }
 .menubar-label-link:not(.selected){
     color: rgb(75,75,200) !important;
 }
-.python{
-    filter: invert(1) !important;
+
+/*Code blocks*/
+.pywindow,
+.cmty-post-html pre[style*="background-color:"]:not([class*=""]){
+    color: black;
+    background: #eee !important;
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+
+/*Class table*/
+.pioo{
+    background: none !important;
+}
+.index-content .item-boxes tr {
+    background-color: #333;
+
+}
+.index-content .item-boxes tr:nth-child(2n) {
+    background-color: #444;
+}
+.book-tables table, .split-narrow table{
+    border-color: #000 !important;
+}
+
+/*Reaper*/
+table.aops tr {
+    background-color: black;
+}
+table.aops tr:nth-child(2n) {
+    background-color: #444;
+}
+#side-column{
+    background-color: rgb(0, 79, 86) !important;
+}
+#main-content.left-navigation {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 236 1' xmlns='http://www.w3.org/2000/svg'><line stroke='rgb(0, 79, 86)' x1='8' y1='0' x2='230' y2='0' stroke-width='2'/></svg>");
+}
+
+/*Login dropdown*/
+.login-dropdown .menu-item{
+    color: rgb(75,75,200);
 }
